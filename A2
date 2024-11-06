@@ -1,0 +1,547 @@
+#1-Ebook class
+class Ebook:
+  ''' A class to represent an Ebook '''
+  def __init__(self, title, author, price):
+        # Initialize an Ebook object with the given title, author, and price
+        
+        # Protected attribute: _title (not strictly private but intended to be protected)
+      self._title = title  # Title of the ebook
+        
+        # Protected attribute: _author (not strictly private but intended to be protected)
+      self._author = author  # Author of the ebook
+        
+        # Protected attribute: _price (not strictly private but intended to be protected)
+      self._price = price  # Price of the ebook
+
+    # Getter method for title
+  def get_title(self):
+    return self._title
+
+    # Setter method for title
+  def set_title(self, title):
+    self._title = title
+
+    # Getter method for author
+  def get_author(self):
+    return self._author
+
+    # Setter method for author
+  def set_author(self, author):
+    self._author = author
+
+    # Getter method for price
+  def get_price(self):
+    return self._price
+
+    # Setter method for price
+  def set_price(self, price):
+    self._price = price
+
+    # Method to return ebook details as a formatted string
+  def getdetails(self):
+    return f"Title: {self._title}, Author: {self._author}, Price: ${self._price:.2f}"
+
+# Example usage:
+# Create an Ebook object
+ebook1 = Ebook("The Great Gatsby", "F. Scott Fitzgerald", 10.99)
+
+# Get the details of the Ebook
+print(ebook1.getdetails())  # Output: Title: The Great Gatsby, Author: F. Scott Fitzgerald, Price: $10.99
+
+
+#2-Author class 
+class Author:
+  ''' A class to represent an Author '''
+  def __init__(self, name, bio):
+        # Initialize an Author object with the given name and bio
+        
+        # Protected attribute: _name (not strictly private but intended to be protected)
+      self._name = name  # Name of the author
+        
+        # Protected attribute: _bio (not strictly private but intended to be protected)
+      self._bio = bio  # Bio of the author
+        
+        # List to store books associated with this author
+      self._books = []  # Protected attribute to store the list of books authored
+
+    # Getter method for name
+  def get_name(self):
+    return self._name
+
+    # Setter method for name
+  def set_name(self, name):
+    self._name = name
+
+    # Getter method for bio
+  def get_bio(self):
+    return self._bio
+
+    # Setter method for bio
+  def set_bio(self, bio):
+    self._bio = bio
+
+    # Method to add a book to the author's list of books
+  def addbook(self, book):
+        # Adds the given book to the _books list
+    self._books.append(book)
+
+    # Method to get the list of books authored by this author
+  def get_books(self):
+    return self._books
+
+    # Method to return author details as a formatted string
+  def getdetails(self):
+    return f"Author: {self._name}, Bio: {self._bio}, Books: {', '.join(self._books)}"
+
+# Example usage:
+# Create an Author object
+author1 = Author("J.K. Rowling", "British author, best known for the Harry Potter series.")
+
+# Add books to the author
+author1.addbook("Harry Potter and the Sorcerer's Stone")
+author1.addbook("Harry Potter and the Chamber of Secrets")
+
+# Get the details of the Author
+print(author1.getdetails())  # Output: Author: J.K. Rowling, Bio: British author, best known for the Harry Potter series., Books: Harry Potter and the Sorcerer's Stone, Harry Potter and the Chamber of Secrets
+
+
+
+#3-Account class
+class Account:
+  ''' A class to represent an Account '''
+  def __init__(self, username, password, status):
+        # Initialize an Account object with the given username, password, and status
+        
+        # Protected attribute: _username (not strictly private but intended to be protected)
+      self._username = username  # Username for the account
+        
+        # Protected attribute: _password (not strictly private but intended to be protected)
+      self._password = password  # Password for the account
+        
+        # Protected attribute: _status (not strictly private but intended to be protected)
+      self._status = status  # Status of the account (e.g., active, suspended)
+
+    # Getter method for username
+  def get_username(self):
+    return self._username
+
+    # Setter method for username
+  def set_username(self, username):
+    self._username = username
+
+    # Getter method for password
+  def get_password(self):
+    return self._password
+
+    # Setter method for password
+  def set_password(self, password):
+    self._password = password
+
+    # Getter method for status
+  def get_status(self):
+    return self._status
+
+    # Setter method for status
+  def set_status(self, status):
+    self._status = status
+
+    # Method to return account details as a formatted string (excluding password for security)
+  def getdetails(self):
+    return f"Username: {self._username}, Status: {self._status}"
+
+# Example usage:
+# Create an Account object
+account1 = Account("Sara_Joe", "securePassword123", "active")
+
+# Display account details
+print(account1.getdetails())  # Output: Username: Sara_Joe, Status: active
+
+# Update account status and password
+account1.set_status("suspended")
+account1.set_password("newPassword456")
+
+# Display updated account details
+print(account1.getdetails())  # Output: Username: Sara_Joe, Status: suspended
+
+
+
+#4-Customer class
+class Customer:
+    '''A class to represent a customer'''
+    def __init__(self, name, contact_number):
+        # Initialize a Customer object with the given name and contact number
+        
+        # Protected attribute: _name (not strictly private but intended to be protected)
+        self._name = name  # Name of the customer
+        
+        # Protected attribute: _contact_number (not strictly private but intended to be protected)
+        self._contact_number = contact_number  # Contact number of the customer
+
+    # Getter method for name
+    def get_name(self):
+        return self._name
+
+    # Setter method for name
+    def set_name(self, name):
+        self._name = name
+
+    # Getter method for contact_number
+    def get_contact_number(self):
+        return self._contact_number
+
+    # Setter method for contact_number
+    def set_contact_number(self, contact_number):
+        self._contact_number = contact_number
+
+    # Method to return customer details as a formatted string
+    def getdetails(self):
+        return f"Name: {self._name}, Contact Number: {self._contact_number}"
+
+# Example usage:
+# Create a Customer object
+customer1 = Customer("Sara Joe", "+971501234567")
+
+# Display customer details
+print(customer1.getdetails())  # Output: Name: Sara Joe, Contact Number: +971501234567
+
+# Update customer details
+customer1.set_name("Sara Joe")
+customer1.set_contact_number("+971509876543")
+
+# Display updated customer details
+print(customer1.getdetails())  # Output: Name: Sara Joe, Contact Number: +971509876543
+
+
+
+#5-Promotion class : 
+from datetime import datetime
+
+class Promotion:
+    '''A class to represent a promotion'''
+    def __init__(self, name, start_date, end_date):
+        # Initialize a Promotion object with name, start date, and end date
+        
+        # Protected attribute: _name (not strictly private but intended to be protected)
+        self._name = name  # Name of the promotion
+        
+        # Protected attribute: _start_date (not strictly private but intended to be protected)
+        self._start_date = start_date  # Start date of the promotion
+        
+        # Protected attribute: _end_date (not strictly private but intended to be protected)
+        self._end_date = end_date  # End date of the promotion
+
+    # Getter method for name
+    def get_name(self):
+        return self._name
+
+    # Setter method for name
+    def set_name(self, name):
+        self._name = name
+
+    # Getter method for start_date
+    def get_start_date(self):
+        return self._start_date
+
+    # Setter method for start_date
+    def set_start_date(self, start_date):
+        self._start_date = start_date
+
+    # Getter method for end_date
+    def get_end_date(self):
+        return self._end_date
+
+    # Setter method for end_date
+    def set_end_date(self, end_date):
+        self._end_date = end_date
+
+    # Method to check if the promotion is active (i.e., current date is between start and end date)
+    def ispromotionactive(self):
+        # Convert start_date and end_date strings to datetime objects for comparison
+        start_date = datetime.strptime(self._start_date, "%d/%m/%Y")
+        end_date = datetime.strptime(self._end_date, "%d/%m/%Y")
+        today = datetime.today()
+
+        # Check if today’s date is between the promotion start and end dates
+        if start_date <= today <= end_date:
+            return True
+        else:
+            return False
+
+    # Method to return promotion details as a formatted string
+    def getdetails(self):
+        return f"Promotion Name: {self._name}, Start Date: {self._start_date}, End Date: {self._end_date}"
+
+# Example usage:
+# Create a Promotion object
+promotion1 = Promotion("Summer Sale", "01/11/2024", "30/11/2024")
+
+# Display promotion details
+print(promotion1.getdetails())  # Output: Promotion Name: Summer Sale, Start Date: 01/06/2024, End Date: 30/06/2024
+
+# Check if the promotion is active
+if promotion1.ispromotionactive():
+    print("The promotion is currently active.")
+else:
+    print("The promotion is not active.")
+
+
+
+#6-Review class : 
+class Review:
+    ''' A class to represent a review '''
+    def __init__(self, rating, comment):
+        # Initialize a Review object with rating and comment
+        
+        # Protected attribute: _rating (not strictly private but intended to be protected)
+        self._rating = rating  # Rating for the review (should be a number, e.g., 1-5)
+        
+        # Protected attribute: _comment (not strictly private but intended to be protected)
+        self._comment = comment  # Comment for the review
+
+    # Getter method for rating
+    def get_rating(self):
+        return self._rating
+
+    # Setter method for rating
+    def set_rating(self, rating):
+        self._rating = rating
+
+    # Getter method for comment
+    def get_comment(self):
+        return self._comment
+
+    # Setter method for comment
+    def set_comment(self, comment):
+        self._comment = comment
+
+    # Method to return review details as a formatted string
+    def getreviewdetails(self):
+        return f"Rating: {self._rating}/5, Comment: {self._comment}"
+
+# Example usage:
+# Create a Review object
+review1 = Review(4, "Great product, would recommend!")
+
+# Display review details
+print(review1.getreviewdetails())  # Output: Rating: 4/5, Comment: Great product, would recommend!
+
+# Modify rating and comment using setter methods
+review1.set_rating(5)
+review1.set_comment("Absolutely fantastic product!")
+
+# Display updated review details
+print(review1.getreviewdetails())  # Output: Rating: 5/5, Comment: Absolutely fantastic product!
+
+
+
+
+#7-Cart class : 
+class Cart:
+    '''A class to represent a Cart'''
+    def __init__(self):
+        # Initialize an empty cart with no items and a subtotal of 0
+        self._items = []  # Protected attribute: List of items in the cart
+        self._subtotal = 0.0  # Protected attribute: Total price of all items in the cart
+
+    # Getter method for items
+    def get_items(self):
+        return self._items
+
+    # Getter method for subtotal
+    def get_subtotal(self):
+        return self._subtotal
+
+    # Setter method for items
+    def set_items(self, items):
+        self._items = items
+
+    # Setter method for subtotal
+    def set_subtotal(self, subtotal):
+        self._subtotal = subtotal
+
+    # Method to add an item to the cart
+    def additem(self, item_name, item_price):
+        # Add the item to the cart
+        self._items.append({'name': item_name, 'price': item_price})
+        # Update the subtotal by adding the item price
+        self._subtotal += item_price
+        print(f"Added {item_name} to the cart. Subtotal: {self._subtotal:.2f}")
+
+    # Method to remove an item from the cart
+    def removeitem(self, item_name):
+        # Find the item in the cart and remove it
+        for item in self._items:
+            if item['name'] == item_name:
+                self._items.remove(item)
+                self._subtotal -= item['price']
+                print(f"Removed {item_name} from the cart. Subtotal: {self._subtotal:.2f}")
+                return
+        print(f"{item_name} not found in the cart.")
+
+# Example usage:
+# Create a Cart object
+cart = Cart()
+
+# Add items to the cart
+cart.additem("Laptop", 1200.99)
+cart.additem("Mouse", 25.50)
+
+# Remove an item from the cart
+cart.removeitem("Mouse")
+
+# Display final subtotal
+print(f"Final Subtotal: {cart.get_subtotal():.2f}")
+
+
+
+#8-Order class : 
+class Order:
+    '''A class to represent an Order'''
+    def __init__(self, order_date, order_status):
+        # Initialize the order with order date and order status
+        self._order_date = order_date  # Protected attribute: The date when the order was placed
+        self._order_status = order_status  # Protected attribute: The current status of the order (e.g., 'Pending', 'Shipped', etc.)
+
+    # Getter method for order_date
+    def get_order_date(self):
+        return self._order_date
+
+    # Getter method for order_status
+    def get_order_status(self):
+        return self._order_status
+
+    # Setter method for order_date
+    def set_order_date(self, order_date):
+        self._order_date = order_date
+
+    # Setter method for order_status
+    def set_order_status(self, order_status):
+        self._order_status = order_status
+
+    # Method to change the order status
+    def change_order_status(self, new_status):
+        self._order_status = new_status
+        print(f"Order status has been updated to: {self._order_status}")
+
+    # Method to display the order details
+    def get_order_details(self):
+        return f"Order Date: {self._order_date}, Order Status: {self._order_status}"
+
+# Example usage:
+# Create an Order object
+order = Order("2024-11-01", "Pending")
+
+# Display order details
+print(order.get_order_details())
+
+# Change order status
+order.change_order_status("Shipped")
+
+# Display updated order details
+print(order.get_order_details())
+
+# Set a new order date
+order.set_order_date("2024-11-02")
+
+# Display updated order date
+print(f"Updated Order Date: {order.get_order_date()}")
+
+
+
+#9-invoice class : 
+class Invoice:
+    '''A class to represent an Invoice'''
+    def __init__(self, order, vat, total):
+        # Initialize the invoice with a string order, VAT, and total amount
+        self._order = order  # Protected attribute: Order represented as a string (e.g., Order ID or description)
+        self._vat = vat  # Protected attribute: Stores the VAT amount for the invoice
+        self._total = total  # Protected attribute: Stores the total amount of the invoice (including VAT)
+
+    # Getter method for order
+    def get_order(self):
+        return self._order
+
+    # Getter method for vat
+    def get_vat(self):
+        return self._vat
+
+    # Getter method for total
+    def get_total(self):
+        return self._total
+
+    # Setter method for order
+    def set_order(self, order):
+        self._order = order
+
+    # Setter method for vat
+    def set_vat(self, vat):
+        self._vat = vat
+
+    # Setter method for total
+    def set_total(self, total):
+        self._total = total
+
+    # Method to generate the invoice by calculating the VAT and total amount
+    def generate_invoice(self):
+        # Assuming the order is a string, you would usually retrieve the order total from an external system.
+        # For simplicity, let's assume the order total is a fixed value for this example.
+        order_total = 100.00  # Example fixed total for the order
+        self._vat = order_total * 0.05  # Assuming VAT rate is 5%
+        self._total = order_total + self._vat  # Total is the sum of order total and VAT
+
+        # Return the generated invoice details
+        return f"Order ID: {self._order}\nVAT (5%): {self._vat:.2f}\nTotal Amount: {self._total:.2f}"
+
+# Example usage:
+# Create an Invoice object with a string order (e.g., Order ID)
+invoice = Invoice("ORD12345", 0.0, 0.0)  # VAT and total are initially set to 0.0
+
+# Generate the invoice
+invoice_details = invoice.generate_invoice()
+
+# Print the invoice details
+print(invoice_details)
+
+
+
+#10Payment class : 
+class Payment:
+    '''A class to represent a Payment'''
+    def __init__(self, paymentmethod, paymentstatus):
+        # Initialize the payment with a payment method and payment status
+        self._paymentmethod = paymentmethod  # Protected attribute: The method used for payment (e.g., Credit Card, PayPal)
+        self._paymentstatus = paymentstatus  # Protected attribute: The status of the payment (e.g., "Pending", "Completed")
+
+    # Getter method for payment method
+    def get_paymentmethod(self):
+        return self._paymentmethod
+
+    # Getter method for payment status
+    def get_paymentstatus(self):
+        return self._paymentstatus
+
+    # Setter method for payment method
+    def set_paymentmethod(self, paymentmethod):
+        self._paymentmethod = paymentmethod
+
+    # Setter method for payment status
+    def set_paymentstatus(self, paymentstatus):
+        self._paymentstatus = paymentstatus
+
+    # Method to process the payment
+    def process_payment(self):
+        if self._paymentstatus == "Pending":
+            self._paymentstatus = "Completed"  # Mark the payment as completed when processed
+            return f"Payment processed using {self._paymentmethod}. Status: {self._paymentstatus}"
+        else:
+            return f"Payment has already been completed. Status: {self._paymentstatus}"
+
+# Example usage:
+# Create a Payment object with payment method and initial status
+payment = Payment("Credit Card", "Pending")
+
+# Process the payment
+payment_details = payment.process_payment()
+
+# Print the payment details
+print(payment_details)
